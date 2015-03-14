@@ -7,6 +7,7 @@ public class Main {
         // TODO Auto-generated method stub
 
         int option = -1;
+        int buscaP = -1;
         //ArrayList<Paciente> pacientes;
         String nome = "";
         String cpf = "";
@@ -22,9 +23,9 @@ public class Main {
             do {
                 System.out.println("CADASTRO");
 
-                System.out.println("1 - Paciente");
-                System.out.println("2 - Medicamento");
-                System.out.println("3 - Listar Paciente");
+                System.out.println("1 - Paciente         \t\t - \t \t 4 - Medicamento");
+                System.out.println("2 - Buscar Paciente   \t\t - \t\t 5 - Buscar Medicamento");
+                System.out.println("3 - Listar Pacientes  \t\t - \t\t 6 - Listar Medicamentos");
                 System.out.println("0 - Sair");
                 option = Console.lerInt("Digite sua opção: ");
 
@@ -37,15 +38,46 @@ public class Main {
                         fone = Console.lerString("Telefone: ");
                         sexo = Console.lerString("Sexo: ");
                         datNascimento = Console.lerString("Data de Nascimento: ");
+                        System.out.println("\n");
+                        Paciente paciente = new Paciente(nome, cpf, sexo,datNascimento, fone);
+                        repositorioPaciente.adicionarPaciente(paciente);
 
                         break;
                     }
                     case 2: {
+                        do{
+                            System.out.println("\t\tBusca Paciente");
+                            System.out.println("1 - Busca por Nome");
+                            System.out.println("2 - Busca por cpf");
+                            System.out.println("3 - Busca por Telefone");
+                            System.out.println("0 - Sair");
+                            buscaP = Console.lerInt("Digite a opção desejada: ");
+                            switch (buscaP){
+                                case 1:{
+                                    System.out.println("Busca por Nome:");
+                                    nome = Console.lerString("Nome: ");
+                                    System.out.println(repositorioPaciente.buscarPacienteNOME(nome));
+                                    break;
+                                }
+                                case 2:{
+                                    System.out.println("Busca por CPF:");
+                                    cpf = Console.lerString("Nome: ");
+                                    System.out.println(repositorioPaciente.buscarPacienteCPF(cpf));
+                                    break;
+                                }
+                                case 3: {
+                                    System.out.println("Busca por telefone:");
+                                    fone = Console.lerString("Telefone: ");
+                                    System.out.println(repositorioPaciente.buscarPacienteFONE(fone));
+                                    break;
+                                }
+                            }
+                        }while (buscaP != 0);
 
                         break;
                     }
                     case 3: {
-                        // listarPacientes();
+
                         System.out.println("\n");
                         break;
                     }
