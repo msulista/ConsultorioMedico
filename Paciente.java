@@ -6,12 +6,14 @@ public class Paciente {
     private String cpf;
     private String sexo;
     private String dataNascimento;
+    private String telefone;
 
-    public Paciente(String nome, String cpf, String sexo, String dataNascimento) {
+    public Paciente(String nome, String cpf, String sexo, String dataNascimento, String telefone) {
         this.nome = nome;
         this.cpf = cpf;
         this.sexo = sexo;
         this.dataNascimento = dataNascimento;
+        this.telefone = telefone;
     }
 
     public  String getNome() {
@@ -39,6 +41,11 @@ public class Paciente {
         this.dataNascimento = dataNascimento;
     }
 
+    public String getTelefone() {
+        return telefone;
+    }
 
-
+    public void setTelefone(String telefone) {
+        this.telefone = telefone;
+    }
 }
