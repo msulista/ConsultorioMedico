@@ -49,12 +49,11 @@ public class RepositorioPaciente {
         }
         return (null);
     }
-    public String listaPaciente(){
+    public void listarPaciente(){
         for (Paciente paci: pacientes) {
 
             System.out.println(paci.getCpf() + " - " + paci.getNome() + " - " + paci.getTelefone());
         }
-        return (null);
     }
 }
 

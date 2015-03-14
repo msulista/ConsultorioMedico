@@ -41,6 +41,7 @@ public class Main {
                         System.out.println("\n");
                         Paciente paciente = new Paciente(nome, cpf, sexo,datNascimento, fone);
                         repositorioPaciente.adicionarPaciente(paciente);
+                        System.out.println("\n Paciente cadastrado com sucesso.\n");
 
                         break;
                     }
@@ -77,7 +78,9 @@ public class Main {
                         break;
                     }
                     case 3: {
+                        System.out.println("\n\nLista de Pacientes");
 
+                        repositorioPaciente.listarPaciente();
                         System.out.println("\n");
                         break;
                     }
