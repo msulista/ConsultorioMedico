@@ -8,6 +8,11 @@ public class Main {
 
         int option = -1;
         //ArrayList<Paciente> pacientes;
+        String nome = "";
+        String cpf = "";
+        String sexo = "";
+        String datNascimento = "";
+        String fone = "";
 
         RepositorioPaciente repositorioPaciente = new RepositorioPaciente();
 
@@ -26,6 +31,12 @@ public class Main {
                 switch (option) {
 
                     case 1: {
+                        System.out.println("\t\tCadastro de Paciente:");
+                        nome = Console.lerString("Nome: ");
+                        cpf = Console.lerString("CPF: ");
+                        fone = Console.lerString("Telefone: ");
+                        sexo = Console.lerString("Sexo: ");
+                        datNascimento = Console.lerString("Data de Nascimento: ");
 
                         break;
                     }
