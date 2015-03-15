@@ -7,6 +7,12 @@ public class Medicamento {
     private String concentracao;
     private String tipo;
 
+    public Medicamento(String cod, String nomeComercial, String concentracao, String tipo) {
+        this.cod = cod;
+        this.nomeComercial = nomeComercial;
+        this.concentracao = concentracao;
+        this.tipo = tipo;
+    }
 
     public String getCod() {
         return cod;
