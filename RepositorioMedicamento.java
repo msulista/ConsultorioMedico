@@ -15,7 +15,7 @@ public class RepositorioMedicamento {
 
     public ArrayList<Medicamento> getMedicamentos(){ return medicamentos;}
 
-    public Medicamento buscarMedicamentoCOD(int cod){
+    public Medicamento buscarMedicamentoCOD(String cod){
 
         for (Medicamento medi: medicamentos) {
             if (medi.getCod().equals(cod)) {

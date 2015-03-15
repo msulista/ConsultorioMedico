@@ -8,6 +8,8 @@ public class Main {
 
         int option = -1;
         int buscaP = -1;
+
+        int buscaM = -1;
         //ArrayList<Paciente> pacientes;
         String nome = "";
         String cpf = "";
@@ -15,7 +17,13 @@ public class Main {
         String datNascimento = "";
         String fone = "";
 
+        String cod;
+        String nomeComercial;
+        String concentracao;
+        String tipo;
+
         RepositorioPaciente repositorioPaciente = new RepositorioPaciente();
+        RepositorioMedicamento repositorioMedicamento = new RepositorioMedicamento();
 
         try {
 
@@ -84,6 +92,56 @@ public class Main {
                         System.out.println("\n");
                         break;
                     }
+                    case 4:{
+                        System.out.println("\n\nCadastro de Medicamentos");
+
+                        nomeComercial = Console.lerString("Nome: ");
+                        cod = Console.lerString("Cod: ");
+                        concentracao = Console.lerString("Concentração: ");
+                        tipo = Console.lerString("Tipo: ");
+                        System.out.println("\n");
+                        Medicamento medicamento = new Medicamento(nomeComercial, cod, concentracao, tipo);
+                        repositorioMedicamento.adicionarMedicamento(medicamento);
+                        System.out.println("\n Medicamento cadastrado com sucesso.\n");
+
+                        break;
+
+                    }
+                    case 5: {
+                        do {
+                            System.out.println("\t\tBusca Medicamentos");
+                            System.out.println("1 - Busca por Código");
+                            System.out.println("2 - Busca por Nome");
+                            System.out.println("0 - Sair");
+                            buscaM = Console.lerInt("Digite a opção desejada: ");
+                            switch (buscaM) {
+                                case 1: {
+                                    System.out.println("Busca por Código:");
+                                    cod = Console.lerString("Código: ");
+                                    System.out.println(repositorioMedicamento.buscarMedicamentoCOD(cod));
+                                    break;
+                                }
+                                case 2: {
+                                    System.out.println("Busca por Nome:");
+                                    nome = Console.lerString("Nome: ");
+                                    System.out.println(repositorioMedicamento.buscarMedicamentoNOME(nome));
+                                    break;
+                                }
+                            }
+                        }
+                            while (buscaP != 0) ;
+
+                            break;
+                    }
+                    case 6: {
+                        System.out.println("\n\nLista de Medicamentos");
+
+                        repositorioMedicamento.listarMedicamento();
+                        System.out.println("\n");
+                        break;
+
+                    }
+
                     case 0: {
                         System.out.println("Saindo...");
                         break;
