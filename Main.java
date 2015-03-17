@@ -24,6 +24,7 @@ public class Main {
 
         RepositorioPaciente repositorioPaciente = new RepositorioPaciente();
         RepositorioMedicamento repositorioMedicamento = new RepositorioMedicamento();
+        RepositorioConsulta repositorioConsulta = new RepositorioConsulta();
 
         try {
 
@@ -60,8 +61,8 @@ public class Main {
                             System.out.println("2 - Busca por cpf");
                             System.out.println("3 - Busca por Telefone");
                             System.out.println("0 - Sair");
-                            buscaP = Console.lerInt("Digite a opção desejada: ");
-                            switch (buscaP){
+                            option = Console.lerInt("Digite a opção desejada: ");
+                            switch (option){
                                 case 1:{
                                     System.out.println("Busca por Nome:");
                                     nome = Console.lerString("Nome: ");

@@ -30,6 +30,14 @@ public class RepositorioPaciente {
         }
         return (null);
     }
+    public boolean existePacienteComCpf(String cpf){
+        if(this.buscarPacienteCPF(cpf) == null){
+            return (false);
+        }
+        return (true);
+
+    }
+
     public Paciente buscarPacienteNOME(String nome){
 
         for (Paciente paci: pacientes) {
@@ -40,6 +48,13 @@ public class RepositorioPaciente {
         }
         return (null);
     }
+    public boolean buscaPacienteComNome(String nome){
+        if(this.buscarPacienteNOME(nome) == null){
+            return (false);
+        }
+        return (true);
+    }
+
     public  Paciente buscarPacienteFONE(String telefone){
 
         for (Paciente paci: pacientes) {
@@ -49,6 +64,13 @@ public class RepositorioPaciente {
         }
         return (null);
     }
+    public boolean existePacienteComFone(String fone){
+        if(this.buscarPacienteNOME(fone) == null){
+            return (false);
+        }
+        return (true);
+    }
+
     public void listarPaciente(){
         for (Paciente paci: pacientes) {
 
