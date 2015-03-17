@@ -66,20 +66,34 @@ public class Main {
                                 case 1:{
                                     System.out.println("Busca por Nome:");
                                     nome = Console.lerString("Nome: ");
-                                    System.out.println(repositorioPaciente.buscarPacienteNOME(nome));
+                                 /*   if(repositorioPaciente.buscarPacienteNOME(nome)){
+
+                                    }
+                                 */
+                                    Paciente paci = repositorioPaciente.buscarPacienteNOME(nome);
+                                    System.out.println("Resultado de sua consulta: ");
+                                    System.out.println(paci.getCpf() + " - " + paci.getNome() + " - " + paci.getTelefone() );
+
                                     break;
                                 }
                                 case 2:{
                                     System.out.println("Busca por CPF:");
                                     cpf = Console.lerString("Nome: ");
-                                    System.out.println(repositorioPaciente.buscarPacienteCPF(cpf));
+                                    Paciente paci = repositorioPaciente.buscarPacienteCPF(cpf);
+                                    System.out.println("Resultado de sua consulta: ");
+                                    System.out.println(paci.getCpf() + " - " + paci.getNome() + " - " + paci.getTelefone() );
                                     break;
                                 }
                                 case 3: {
                                     System.out.println("Busca por telefone:");
                                     fone = Console.lerString("Telefone: ");
-                                    System.out.println(repositorioPaciente.buscarPacienteFONE(fone));
+                                    Paciente paci = repositorioPaciente.buscarPacienteFONE(fone);
+                                    System.out.println("Resultado de sua consulta: ");
+                                    System.out.println(paci.getCpf() + " - " + paci.getNome() + " - " + paci.getTelefone() );
                                     break;
+                                }
+                                case 0: {
+                                    System.out.println("Voltando ao menu anterior!");
                                 }
                             }
                         }while (buscaP != 0);
