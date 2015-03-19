@@ -68,12 +68,11 @@ public class Main {
                                     nome = Console.lerString("Nome: ");
                                     if(!repositorioPaciente.existePacienteComNome(nome)){
                                         System.out.println("Nome não cadastrado.");
+                                    }else {
+                                        Paciente paci = repositorioPaciente.buscarPacienteNOME(nome);
+                                        System.out.println("Resultado de sua consulta: ");
+                                        System.out.println(paci.getCpf() + " - " + paci.getNome() + " - " + paci.getTelefone());
                                     }
-
-                                    Paciente paci = repositorioPaciente.buscarPacienteNOME(nome);
-                                    System.out.println("Resultado de sua consulta: ");
-                                    System.out.println(paci.getCpf() + " - " + paci.getNome() + " - " + paci.getTelefone() );
-
                                     break;
                                 }
                                 case 2:{
@@ -81,10 +80,11 @@ public class Main {
                                     cpf = Console.lerString("CPF: ");
                                     if(repositorioPaciente.existePacienteComCpf(cpf)){
                                         System.out.println("CPF não cadastrado.");
+                                    }else {
+                                        Paciente paci = repositorioPaciente.buscarPacienteCPF(cpf);
+                                        System.out.println("Resultado de sua consulta: ");
+                                        System.out.println(paci.getCpf() + " - " + paci.getNome() + " - " + paci.getTelefone());
                                     }
-                                    Paciente paci = repositorioPaciente.buscarPacienteCPF(cpf);
-                                    System.out.println("Resultado de sua consulta: ");
-                                    System.out.println(paci.getCpf() + " - " + paci.getNome() + " - " + paci.getTelefone() );
                                     break;
                                 }
                                 case 3: {
@@ -92,10 +92,11 @@ public class Main {
                                     fone = Console.lerString("Telefone: ");
                                     if(repositorioPaciente.existePacienteComFone(fone)){
                                         System.out.println("Telefone não cadastrado.");
+                                    }else {
+                                        Paciente paci = repositorioPaciente.buscarPacienteFONE(fone);
+                                        System.out.println("Resultado de sua consulta: ");
+                                        System.out.println(paci.getCpf() + " - " + paci.getNome() + " - " + paci.getTelefone());
                                     }
-                                    Paciente paci = repositorioPaciente.buscarPacienteFONE(fone);
-                                    System.out.println("Resultado de sua consulta: ");
-                                    System.out.println(paci.getCpf() + " - " + paci.getNome() + " - " + paci.getTelefone() );
                                     break;
                                 }
                                 case 0: {
@@ -108,7 +109,6 @@ public class Main {
                     }
                     case 3: {
                         System.out.println("\n\nLista de Pacientes");
-
                         repositorioPaciente.listarPaciente();
                         System.out.println("\n");
                         break;
