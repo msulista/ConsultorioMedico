@@ -1,5 +1,3 @@
-import java.util.Calendar;
-import java.util.Date;
 
 /**
  * Created by marcus.rodrigues on 12/03/2015.
@@ -7,14 +5,12 @@ import java.util.Date;
 public class Consulta {
 
     Paciente paciente;
-    Date date;
-    Calendar calendario;
+    String dataHora;
     Receituario receituario;
 
-    public Consulta(Paciente paciente, Date date, Calendar calendario, Receituario receituario) {
+    public Consulta(Paciente paciente, String dataHora, Receituario receituario) {
         this.paciente = paciente;
-        this.date = new Date();
-        this.calendario = Calendar.getInstance();
+        this.dataHora = dataHora;
         this.receituario = receituario;
     }
 
@@ -26,20 +22,12 @@ public class Consulta {
         this.paciente = paciente;
     }
 
-    public Date getDate() {
-        return date;
+    public String getDataHora() {
+        return dataHora;
     }
 
-    public void setDate(Date date) {
-        this.date = date;
-    }
-
-    public Calendar getCalendario() {
-        return calendario;
-    }
-
-    public void setCalendario(Calendar calendario) {
-        this.calendario = calendario;
+    public void setDataHora(String dataHora) {
+        this.dataHora = dataHora;
     }
 
     public Receituario getReceituario() {
