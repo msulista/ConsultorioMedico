@@ -1,5 +1,6 @@
 import sun.security.jca.GetInstance;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
@@ -187,19 +188,35 @@ public class Main {
                     case 2:{
                         System.out.println("CONSULTA");
                         Date data = new Date();
-                        Calendar calendario = Calendar.getInstance();
+                        SimpleDateFormat dataFormat = new SimpleDateFormat("Data: 'dd/MM/yyyy 'Hora:' HH:mm'");
+                        String dataHora = dataFormat.format(data);
 
+                        String nomePaci = Console.lerString("Nome Paciente: ");
+                        if (!repositorioPaciente.existePacienteComNome(nomePaci)) {
+                            System.out.println("Nome não cadastrado.");
+                        }
+                        Paciente paci = repositorioPaciente.buscarPacienteNOME(nomePaci);
+
+                        String nomeMedi = Console.lerString("Nome Medicamento: ");
+                        if(!repositorioMedicamento.existeMedicamentoComNome(nomeMedi)){
+                            System.out.println("Nome não cadastrado.");
+                        }
+                        Medicamento medi = repositorioMedicamento.buscarMedicamentoNOME(nomeMedi);
+
+                        String posologia = Console.lerString("Digite posologia: ");
+                        Receituario receituario = new Receituario(medi, posologia);
+
+                        Consulta consulta = new Consulta(paci, dataHora, receituario);
+                        repositorioConsulta.adicionarConsulta(consulta);
 
                         System.out.println();
-
                     }
-
                     case 0:{
                         System.out.println("Fim do programa.");
                         System.out.println("\n");
                     }
                 }
-            }while(option != 0);//Final laço form
+            }while(option != 0);//Final laço Menu Principal
         }catch (InputMismatchException exception){
             System.out.println("Escolha uma opção válida!");
         }

@@ -35,7 +35,12 @@ public class RepositorioMedicamento {
             }
         }
         return (null);
-
+    }
+    public boolean existeMedicamentoComNome(String nome){
+        if(this.buscarMedicamentoNOME(nome) == null){
+            return (false);
+        }
+        return (true);
     }
 
     public void listarMedicamento(){
