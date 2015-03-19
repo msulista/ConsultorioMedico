@@ -114,6 +114,7 @@ public class Main {
                                             }
                                             case 0: {
                                                 System.out.println("Voltando ao menu anterior!");
+                                                break;
                                             }
                                         }
                                     } while (buscaP != 0);
@@ -210,10 +211,12 @@ public class Main {
                         repositorioConsulta.adicionarConsulta(consulta);
 
                         System.out.println();
+                        break;
                     }
                     case 0:{
                         System.out.println("Fim do programa.");
                         System.out.println("\n");
+                        break;
                     }
                 }
             }while(option != 0);//Final laço Menu Principal
