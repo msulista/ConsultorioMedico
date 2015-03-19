@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Date;
 
 /**
  * Created by marcus.rodrigues on 15/03/2015.
@@ -20,10 +21,8 @@ public class RepositorioConsulta {
         return consultas;
     }
 
-    public Consulta buscarConsultaPorNomePaciente(String nome){
-
+    public Consulta buscarConsultaDePacientePorNome(String nome){
         for(Consulta con: consultas){
-
             if(con.getPaciente().getNome().equalsIgnoreCase(nome)){
                 return (con);
             }
@@ -32,9 +31,32 @@ public class RepositorioConsulta {
     }
     public boolean existeConsultaDePacienteComNome(String nome){
 
-        if(this.buscarConsultaPorNomePaciente(nome) == null){
+        if(this.buscarConsultaDePacientePorNome(nome) == null){
             return (false);
         }
         return (true);
     }
+    public Consulta buscarConsultaDePacientePorCpf(String cpf){
+        for(Consulta con: consultas){
+            if(con.getPaciente().getCpf().equalsIgnoreCase(cpf)){
+                return (con);
+            }
+        }
+        return (null);
+    }
+    public boolean existeConsultaDePacienteComCpf(String cpf){
+        if(this.buscarConsultaDePacientePorCpf(cpf) == null){
+            return (false);
+        }
+        return (true);
+    }
+    /*
+    public Consulta buscarConsultaDePacientePorData(Date data){
+        for (Consulta con: consultas){
+            if(con.getDate(data)){
+
+            }
+        }
+    }
+    */
 }
