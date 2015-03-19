@@ -66,10 +66,10 @@ public class Main {
                                 case 1:{
                                     System.out.println("Busca por Nome:");
                                     nome = Console.lerString("Nome: ");
-                                 /*   if(repositorioPaciente.buscarPacienteNOME(nome)){
-
+                                    if(!repositorioPaciente.existePacienteComNome(nome)){
+                                        System.out.println("Nome não cadastrado.");
                                     }
-                                 */
+
                                     Paciente paci = repositorioPaciente.buscarPacienteNOME(nome);
                                     System.out.println("Resultado de sua consulta: ");
                                     System.out.println(paci.getCpf() + " - " + paci.getNome() + " - " + paci.getTelefone() );
@@ -78,7 +78,10 @@ public class Main {
                                 }
                                 case 2:{
                                     System.out.println("Busca por CPF:");
-                                    cpf = Console.lerString("Nome: ");
+                                    cpf = Console.lerString("CPF: ");
+                                    if(repositorioPaciente.existePacienteComCpf(cpf)){
+                                        System.out.println("CPF não cadastrado.");
+                                    }
                                     Paciente paci = repositorioPaciente.buscarPacienteCPF(cpf);
                                     System.out.println("Resultado de sua consulta: ");
                                     System.out.println(paci.getCpf() + " - " + paci.getNome() + " - " + paci.getTelefone() );
@@ -87,6 +90,9 @@ public class Main {
                                 case 3: {
                                     System.out.println("Busca por telefone:");
                                     fone = Console.lerString("Telefone: ");
+                                    if(repositorioPaciente.existePacienteComFone(fone)){
+                                        System.out.println("Telefone não cadastrado.");
+                                    }
                                     Paciente paci = repositorioPaciente.buscarPacienteFONE(fone);
                                     System.out.println("Resultado de sua consulta: ");
                                     System.out.println(paci.getCpf() + " - " + paci.getNome() + " - " + paci.getTelefone() );

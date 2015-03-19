@@ -48,7 +48,7 @@ public class RepositorioPaciente {
         }
         return (null);
     }
-    public boolean buscaPacienteComNome(String nome){
+    public boolean existePacienteComNome(String nome){
         if(this.buscarPacienteNOME(nome) == null){
             return (false);
         }
@@ -65,7 +65,7 @@ public class RepositorioPaciente {
         return (null);
     }
     public boolean existePacienteComFone(String fone){
-        if(this.buscarPacienteNOME(fone) == null){
+        if(this.buscarPacienteFONE(fone) == null){
             return (false);
         }
         return (true);
